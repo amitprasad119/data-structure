@@ -1,4 +1,4 @@
-package com.amit.datastructure.linkedlist;
+package datastructure.linkedlist;
 
 public class LinkedListMain {
     public static void main(String[] args) {

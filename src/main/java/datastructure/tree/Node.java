@@ -1,4 +1,4 @@
-package com.amit.datastructure.tree;
+package datastructure.tree;
 
 public class Node<T> {
     private T data;

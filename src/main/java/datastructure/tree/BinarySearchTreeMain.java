@@ -1,4 +1,4 @@
-package com.amit.datastructure.tree;
+package datastructure.tree;
 
 public class BinarySearchTreeMain {
     public static void main(String[] args) {

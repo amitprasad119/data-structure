@@ -1,4 +1,4 @@
-package datastructure.linkedlist;
+package com.amit.datastructure.linkedlist;
 
 public class Node <T extends Comparable<T>> {
     private T data;

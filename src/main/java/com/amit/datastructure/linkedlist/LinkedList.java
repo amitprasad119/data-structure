@@ -1,4 +1,4 @@
-package datastructure.linkedlist;
+package com.amit.datastructure.linkedlist;
 
 public class LinkedList<T extends Comparable<T>> implements Cloneable {
     private Node<T> head = null;

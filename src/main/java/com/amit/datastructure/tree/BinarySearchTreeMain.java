@@ -30,9 +30,13 @@ public class BinarySearchTreeMain {
         System.out.println("Pre Order Tree");
         bst.preOrder(head);
         System.out.println("data:"+bst.findMin(head));
-        System.out.println("Max:"+bst.maxLevel(head));
+        System.out.println("Max Level:"+bst.maxLevel(head));
+        System.out.println("max:"+bst.findMax(head));
+
+        System.out.println( "Total:"+  bst.calculateTotal(head));
         System.out.println("Mirror Tree");
         bst.mirrorTree(head);
         bst.inOrder(head);
+
     }
 }

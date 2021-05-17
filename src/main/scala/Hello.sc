@@ -1,1 +1,1 @@
-'A'.isUpper
+Math.addExact(1,2)

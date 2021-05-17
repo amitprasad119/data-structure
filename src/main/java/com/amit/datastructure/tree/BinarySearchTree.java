@@ -64,11 +64,26 @@ public class BinarySearchTree {
       if(head == null) {
           return;
       }
-      mirrorTree(head.getLeftChild());
-      mirrorTree(head.getRightChild());
-      Node tempLeft = head.getLeftChild();
+      Node<Integer> tempLeft = head.getLeftChild();
       head.setLeftChild(head.getRightChild());
       head.setRightChild(tempLeft);
+    }
+
+    int findMax(Node<Integer> head) {
+        if(head == null) {
+            return  -1;
+        }
+         if(head.getRightChild() == null) {
+             return head.getData();
+         }
+       return  findMax(head.getRightChild());
+    }
+
+    long calculateTotal(Node<Integer> head) {
+        if(head == null) {
+            return 0;
+        }
+        return head.getData() + calculateTotal(head.getRightChild()) + calculateTotal(head.getLeftChild());
     }
 
 }

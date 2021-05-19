@@ -16,6 +16,10 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T>  {
         System.out.println("Inserting small element");
         minHeap.insert(2);
         minHeap.printHeapArray();
+        System.out.println("Max element from Heap:"+minHeap.findMaxElement(minHeap));
+        printKMaxElements(5);
+        printKMaxElements(3);
+        printKMaxElements(6);
     }
     public MinHeap(Class<T> clazz) {
         super(clazz);
@@ -57,5 +61,35 @@ public class MinHeap<T extends Comparable<T>> extends Heap<T>  {
             shiftUp(index);
         }
 
+    }
+
+    public int findMaxElement(MinHeap<Integer> minHeap) {
+        int lastIndex = minHeap.getCount() - 1;
+        int lastParentIndex = getParentIndex(lastIndex);
+        int firstChildIndexAfterParent = lastParentIndex  + 1;
+        int maxElement = minHeap.getElementAtIndex(firstChildIndexAfterParent);
+        for(int i = firstChildIndexAfterParent; i<= lastIndex;i++) {
+            if(maxElement < minHeap.getElementAtIndex(i)){
+                maxElement = minHeap.getElementAtIndex(i);
+            }
+        }
+       return maxElement;
+    }
+
+    public static void printKMaxElements(int k ) throws MinHeap.HeapEmptyException,MinHeap.HeapFullException {
+        MinHeap<Integer> minHeap = new MinHeap<>(Integer.class,k);
+        int[] randomNumberArray = new int[] {2, 5, 6, 21, 67, 88, 4, 1, 3, 9, 99};
+        for(int item: randomNumberArray) {
+            if(minHeap.isEmpty()) {
+                minHeap.insert(item);
+            } else if(!minHeap.isFull() || minHeap.getHighestPriority() < item) {
+                if(minHeap.isFull()) {
+                    minHeap.removeHighestPriority();
+                }
+                minHeap.insert(item);
+
+            }
+        }
+        minHeap.printHeapArray();
     }
 }

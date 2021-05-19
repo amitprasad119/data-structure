@@ -18,6 +18,11 @@ package com.amit.datastructure.heap;
          maxHeap.insert(100);
          System.out.println("After inserting 100");
          maxHeap.printHeapArray();
+         System.out.println("Min element from max heap:"+maxHeap.findMinElement(maxHeap));
+         maxHeap.insert(2);
+         maxHeap.printHeapArray();
+         System.out.println("Min element from max heap:"+maxHeap.findMinElement(maxHeap));
+
      }
 
      public MaxHeap(Class<T> clazz) {
@@ -62,5 +67,18 @@ package com.amit.datastructure.heap;
              swap(childLargerIndex,index);
              shiftDown(childLargerIndex);
          }
+     }
+
+     public int findMinElement(MaxHeap<Integer> maxHeap) {
+         int lastIndex = maxHeap.getCount() - 1;
+         int parentIndexForLastChild = maxHeap.getParentIndex(lastIndex);
+         int firstIndexAfterParent = parentIndexForLastChild + 1;
+         int minElement = maxHeap.getElementAtIndex(lastIndex);
+         for(int i = firstIndexAfterParent; i<=lastIndex;i++) {
+             if(minElement > maxHeap.getElementAtIndex(i)){
+                 minElement = maxHeap.getElementAtIndex(i);
+             }
+         }
+         return  minElement;
      }
  }

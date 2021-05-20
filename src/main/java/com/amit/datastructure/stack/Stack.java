@@ -1,13 +1,19 @@
 package com.amit.datastructure.stack;
 
+import static java.lang.reflect.Array.newInstance;
+
 public class Stack<T extends Comparable<T>> {
-    private  int MAX_SIZE = 5;
+    private  static int MAX_SIZE = 5;
     private int top = -1;
     private T[] stack;
-
+     public Stack(Class<T> clazz) {
+         this(MAX_SIZE,clazz);
+     }
+     public Stack(int maxSize,Class<T> clazz ) {
+         stack = (T[]) newInstance(clazz,maxSize);
+     }
     public static void main(String[] args) throws StackOverflowException,StackUnderflowException {
-        Stack<Integer> stackObj = new Stack<>();
-        stackObj.stack = new Integer[stackObj.MAX_SIZE];
+        Stack<Integer> stackObj = new Stack<Integer>(Integer.class);
         stackObj.push(10);
         stackObj.push(20);
         stackObj.push(30);
@@ -51,9 +57,10 @@ public class Stack<T extends Comparable<T>> {
            System.out.println("[" +  i + "]" + ":" + stack[i]);
        }
     }
-
+    public boolean isEmpty() {
+         return top == -1 ;
+    }
     public static class StackOverflowException extends  Exception {
-
     }
     public static  class StackUnderflowException extends  Exception {
     }

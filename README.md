@@ -1,5 +1,6 @@
 # data-structure using java
-  1. LinkedList 
-  2. Binary Tree 
-  3. Binary Search Tree
-  4. Heap
+  1. Stack 
+  2. LinkedList 
+  3. Binary Tree 
+  4. Binary Search Tree
+  5. Heap

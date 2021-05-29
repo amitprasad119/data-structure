@@ -6,8 +6,8 @@ public class TrainPlatform {
 
     public static void main(String[] args) {
         int arrival[] = {900,940,950,1100,1500,1800};
-        int depature[] = {910, 1200,1120,1130,1900,2000};
-        System.out.println( findNumberPlatform(arrival,depature));
+        int departure[] = {910, 1200,1120,1130,1900,2000};
+        System.out.println( findNumberPlatform(arrival,departure));
     }
     public static  int findNumberPlatform(int[] arrivals, int [] departures) {
         int maxPlatform = 1;

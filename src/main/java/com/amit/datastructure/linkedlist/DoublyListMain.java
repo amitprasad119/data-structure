@@ -24,6 +24,10 @@ public class DoublyListMain {
         dList.printList();
         dList.deleteElement(20);
         dList.printList();
+        dList.addNode(30);
+        dList.addNode(40);
+        dList.addNode(50);
+        dList.printList();
         System.out.println("Total:"+dList.totalCount());
     }
 }

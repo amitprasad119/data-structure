@@ -1,2 +1,5 @@
-Math.sqrt(10)
+val x = 'b';
+println(x.toInt)
+x - 'a'
+
 

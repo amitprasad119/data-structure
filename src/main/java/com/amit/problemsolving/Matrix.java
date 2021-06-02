@@ -4,6 +4,7 @@ public class Matrix {
     public static void main(String[] args) {
 
         /**
+         *   90 degree image rotation problem
                 Original image
                 1 2 3
                 4 5 6

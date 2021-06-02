@@ -23,7 +23,7 @@ public class Matrix {
            **/
         int matrix[][] = {{1,2,3},{4,5,6},{7,8,9}};
         int row = matrix.length;
-        int col = matrix.length;
+        int col = matrix[0].length;
         System.out.println("Original image");
         for(int  i= 0;i< row; i++) {
             for(int j=0;j<col;j++) {

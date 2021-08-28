@@ -22,7 +22,7 @@ public class FibonacciExample {
         }
         return cache[n];
     }
-
+    // using dynamic programming [Memoization]
     long fiByMemo(int n, long[] cache) {
         if(n == 0) return  0;
         if(n == 1) return  1;

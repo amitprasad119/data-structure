@@ -1,4 +1,5 @@
-object WorkBook extends App{
+object WorkBook {
+
 
   def tailrecSum(n:Int, runningTotal:Int = 0): Int =   {
     if (n == 0) {

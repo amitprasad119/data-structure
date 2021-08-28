@@ -10,7 +10,7 @@ public class FibonacciExample {
 
     }
 
-    // using dynamic programming
+    // using dynamic programming [tabulation]
     long fiboByDP(int n) {
         long cache[] = new long[n+1];
         cache[0] = 0;
@@ -22,9 +22,23 @@ public class FibonacciExample {
         }
         return cache[n];
     }
+
+    long fiByMemo(int n, long[] cache) {
+        if(n == 0) return  0;
+        if(n == 1) return  1;
+        if(cache[n] != 0) {
+            return cache[n];
+        }
+        long res = fiByMemo(n-1,cache) + fiByMemo(n-2,cache);
+        cache[n] = res;
+        return  cache[n];
+    }
     public static void main(String[] args) {
         FibonacciExample f = new FibonacciExample();
-        System.out.println("By dp[tabulation]:"+f.fiboByDP(50));
+
+        System.out.println("By dp[tabulation]:"+f.fiboByDP(10));
+        System.out.println("By dp[memo]:"+f.fiByMemo(200,new long[201]));
+
         System.out.println("by recursion:"+f.fiboCalculate(50));
 
     }

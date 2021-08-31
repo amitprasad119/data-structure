@@ -1,4 +1,4 @@
-package com.amit.problemsolving;
+package com.amit.problemsolving.dp;
 
 public class FibonacciExample {
 

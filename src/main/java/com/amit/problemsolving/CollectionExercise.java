@@ -67,6 +67,15 @@ public class CollectionExercise {
      sortedName.add("Amit");
      System.out.println("Sorted set using treeset");
      System.out.println(sortedName);
+      TreeSet<Integer> ts = new TreeSet<>();
+       ts.add(12);
+       ts.add(14);
+       ts.add(17);
+       ts.add(90);
+       ts.add(76);
+       ts.add(54);
+      for(int n:ts)
+          System.out.println("name:"+ n + "->"+ts.ceiling(n));
   }
 
   void hashOperation() {

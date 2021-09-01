@@ -1,11 +1,14 @@
 package com.amit.problemsolving.dp;
 
+import java.util.TreeSet;
+
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         int arr[] = {10,22,9,33,21,50,41,60,80};
         int dp[][] = new int [arr.length + 1][arr.length];
 
-        System.out.println(lisHelperRec( -1,0,dp,arr));
+       // System.out.println(lisHelperRec( -1,0,dp,arr));
+        System.out.println("Longest O(n log n):"+lengthOfLIS(arr));
     }
 
     static int lisHelperRec(int prevCount, int currentCount, int[][] dp, int[] arr) {
@@ -24,5 +27,26 @@ public class LongestIncreasingSubsequence {
             dp[prevCount][currentCount] = Math.max(option1,option2);
 
         return  Math.max(option1,option2);
+    }
+
+    public static int lengthOfLIS(int[] nums) {
+        for(int n:nums)
+            System.out.print(" " + n);
+        System.out.println("after tree set..");
+        TreeSet<Integer> bst = new TreeSet<>();
+        for (int num : nums) {
+            Integer higherOrEqual = bst.ceiling(num);
+            if (higherOrEqual == null) {
+                bst.add(num);
+            }
+            else {
+
+                bst.remove(higherOrEqual);
+                bst.add(num); // O(logn)
+            }
+            System.out.println();
+        }
+
+        return bst.size();
     }
 }

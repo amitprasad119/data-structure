@@ -12,19 +12,19 @@ public class LongestCommonSubsequence {
         char tArray2[] = text2.toCharArray();
         int n = tArray1.length;
         int m = tArray2.length;
-        int lcs[][] = new int[tArray1.length + 1][tArray2.length + 1];
+        int dp[][] = new int[tArray1.length + 1][tArray2.length + 1];
          for(int i =0;i<= n;i++) {
              for (int j = 0; j <= m; j++) {
                  if( i ==0 || j== 0)
-                     lcs[i][j] = 0;
+                     dp[i][j] = 0;
                else if(tArray1[i-1] == tArray2[j-1])
-                    lcs[i][j] = 1 + lcs[i-1][j-1];
+                    dp[i][j] = 1 + dp[i-1][j-1];
                 else
-                    lcs[i][j]= Math.max(lcs[i-1][j],lcs[i][j-1]);
+                    dp[i][j]= Math.max(dp[i-1][j],dp[i][j-1]);
              }
              System.out.println();
          }
-         return  lcs[n][m];
+         return  dp[n][m];
     }
 
 

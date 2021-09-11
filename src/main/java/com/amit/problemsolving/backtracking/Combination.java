@@ -6,40 +6,41 @@ import java.util.HashSet;
 
 public class Combination {
     public static void main(String[] args) {
-        int[] arr = new int[] {2,3,5,8};
+        int[] arr = new int[] {1,2,3,5,8,9,4,6};
+        int[] arr2 = new int[] {1,2,3,4};
+
         Combination p = new Combination();
-      //  p.combination(arr,new ArrayList<>(),3,0);
-        p.combinationAlternative(arr,new HashSet<>(),0,3);
+        p.targetCombination(arr,new HashSet<>(),6 ,0);
+        p.combinations(arr2,new ArrayList<Integer> (),2,0);
     }
 
-    void combination(int a[],  ArrayList<Integer> combinationArr,int k,int index) {
-        if(combinationArr.size() == k)
+    void combinations(int [] arr,ArrayList<Integer> partial,int k,int start) {
+        if(partial.size() ==k){
+            System.out.println(partial);
+            return;
+        }
+        if(start == arr.length)
+            return;
+        for(int i = start;i< arr.length;i++)
         {
-            System.out.println(combinationArr);
-            return;
+                 partial.add(arr[i]);
+                 combinations(arr,partial,k,i+1);
+                 partial.remove(partial.size()-1);
         }
-          if(index == a.length){
-              return;
-          }
-
-            combinationArr.add(a[index]);
-            combination(a,combinationArr,k,index+1);
-            combinationArr.remove(a[index]);
-            combination(a,combinationArr, k,index+1);
-
     }
 
-    public  void combinationAlternative(int[] input,  HashSet<Integer>  partial, int i, int k){
-        if(partial.size() == k){
-            System.out.println(Arrays.toString(partial.toArray()));
+
+
+    public void targetCombination(int[] arr,HashSet<Integer> combinations,int target,int i) {
+        if(combinations.stream().mapToInt(Integer ::intValue).sum() == target) {
+            System.out.println(combinations);
             return;
         }
-        if(i == input.length){
-            return;
-        }
-        partial.add(input[i]);
-        combinationAlternative(input,partial,i+1,k);
-        partial.remove(input[i]);
-        combinationAlternative(input,partial,i+1,k);
+        if(i == arr.length) return;
+               combinations.add(arr[i]);
+               targetCombination(arr, combinations, target,i+1);
+               combinations.remove(arr[i]);
+               targetCombination(arr, combinations, target,i+1);
+
     }
 }

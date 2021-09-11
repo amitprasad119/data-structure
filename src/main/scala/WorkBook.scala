@@ -1,14 +1,14 @@
-object WorkBook {
 
 
-  def tailrecSum(n:Int, runningTotal:Int = 0): Int =   {
-    if (n == 0) {
-       runningTotal
-    } else {
-       tailrecSum(n - 1, runningTotal + n)
-    }
-  }
+object WorkBook extends App {
 
+  // @tailrec
+   def factorial(n:Int,acc:BigInt = 1) : BigInt ={
+    if(n == 0)
+      return acc
+      factorial( n-1, n * acc)
+   }
 
-  println(tailrecSum(10))
+  println(factorial(1000))
+
 }

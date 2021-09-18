@@ -8,7 +8,7 @@ object WorkBook extends App {
       return acc
       factorial( n-1, n * acc)
    }
-
+ // val l = new mutable.LinkedHashMap[Int,Int](5,.75f,true)
   println(factorial(1000))
 
 }

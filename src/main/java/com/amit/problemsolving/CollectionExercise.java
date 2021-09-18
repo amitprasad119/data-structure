@@ -23,6 +23,7 @@ public class CollectionExercise {
         System.out.println("LinkedList From collection:"+ll);
         System.out.println("Print through the iterator interface");
         Iterator<String> iterator = ll.iterator();
+        ll.forEach((ele) -> System.out.println(ele));
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
@@ -30,12 +31,12 @@ public class CollectionExercise {
 
   void setOperation() {
         // Set is an interface whose implementation are done through [HashSet,LinkedHashSet]
-       Set<String> names = new HashSet<>();
+       HashSet<String> names = new HashSet<>(4);
        names.add("Amit");
        names.add("Sumit");
        names.add("Pankaj");
        names.add("George");
-       names.add("Amit");
+      // names.add("Amit");
       // Output will be unique elements and there won't be a insertion order maintained
       System.out.println("Print the set from hashSet: "+names);
       //Now let's see the example of LinkedHashSet to see wether it maintains the insertion order or not
@@ -149,12 +150,12 @@ public class CollectionExercise {
 
     public static void main(String[] args) {
            CollectionExercise collExer = new CollectionExercise();
-           collExer.listOperations();
+           //collExer.listOperations();
            collExer.setOperation();
-           collExer.hashOperation();
+           //collExer.hashOperation();
         int[] num = {53,108,18,16,34,5,100,75,49,10,144,9,51,52,86,64,58,17,2,72,4};
-        System.out.println("Min:"+collExer.findMin(num));
-        System.out.println("Max:"+collExer.findMax(num));
-        collExer.factorMinus(num);
+       // System.out.println("Min:"+collExer.findMin(num));
+        //System.out.println("Max:"+collExer.findMax(num));
+        //collExer.factorMinus(num);
     }
 }

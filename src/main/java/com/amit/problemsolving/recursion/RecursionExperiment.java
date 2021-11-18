@@ -7,7 +7,8 @@ public class RecursionExperiment {
        // x(3,new ArrayList<>());
         RecursionExperiment r = new RecursionExperiment();
       //  r.print(10,"even-0");
-        per(5);
+      //  per(5);
+        System.out.println(reverseString("Hello"));
     }
 
      static void y(int n) {
@@ -35,6 +36,12 @@ public class RecursionExperiment {
         System.out.println("End");
     }
 
+    public static String reverseString(String s ) {
+        if(s.isEmpty()) {
+            return "";
+        }
+        return reverseString(s.substring(1)) + s.charAt(0);
+    }
     private static void x(int n,ArrayList<Integer> partial) {
 
         if(partial.size() == 3) {

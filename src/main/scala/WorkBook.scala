@@ -2,13 +2,15 @@
 
 object WorkBook extends App {
 
-  // @tailrec
-   def factorial(n:Int,acc:BigInt = 1) : BigInt ={
-    if(n == 0)
-      return acc
-      factorial( n-1, n * acc)
+  val mappedName = Map("Amrita" -> "1","John" ->2,"Sagar" -> "9")
+   def greet(name: String) {
+     mappedName.get(name) match {
+       case Some(_) => println("Hello " +name)
+       case _ => println("Hello, Who are you ?")
+     }
    }
- // val l = new mutable.LinkedHashMap[Int,Int](5,.75f,true)
-  println(factorial(1000))
 
+  println(greet("Amrita"))
+
+  List("Amit","Sumit","Amrita").map(greet)
 }

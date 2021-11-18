@@ -5,7 +5,7 @@ class Singleton {
     int r = 2 ;
     static Singleton singletonExample = null;
     static int totalCount = 0;
-    private Singleton() {
+    Singleton() {
 
     }
      // this is to generate one and only one instance

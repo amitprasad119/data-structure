@@ -23,6 +23,7 @@ public class LinkedListMain {
         ll.deleteAtPos(3);
         System.out.println("After deletion at 3");
         ll.printList();
+        System.out.println("total:"+ll.countNodeRec());
 
     }
 }

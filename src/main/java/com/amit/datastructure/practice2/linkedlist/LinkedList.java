@@ -92,6 +92,18 @@ class LinkedList<T extends Comparable<T>> {
        return totalCount;
     }
 
+     int countNodeRec() {
+      return countNodeRec(head);
+     }
+
+     int countNodeRec( Node head ) {
+       if(head == null) {
+           return 0;
+       }
+       return 1 + countNodeRec(head.getNext());
+    }
+
+
 
    void printList() {
        Node<T> curr = head;

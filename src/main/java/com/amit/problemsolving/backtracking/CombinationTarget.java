@@ -7,7 +7,7 @@ public class CombinationTarget {
 
     public static void main(String[] args) {
         List<List<Integer>> result = new ArrayList<>();
-        int a[] = new int[] {2,3,6,7};
+        int a[] = new int[] {2,3,6,7,1};
         int target = 7;
          subsetTarget(a,result,new ArrayList<>(), target,0,0);
         System.out.println(result);
@@ -24,7 +24,7 @@ public class CombinationTarget {
         }
 
 
-         for(int i = start;i<arr.length;i++) {
+         for(int i = 0;i<arr.length;i++) {
              partial.add(arr[i]);
              subsetTarget(arr,result,partial, target,sum+arr[i],i);
              partial.remove(partial.size() -1);

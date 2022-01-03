@@ -5,8 +5,8 @@ package com.amit.problemsolving;
 public class DuplicateInArray {
     public static void main(String[] args) {
       int arr[] = new int[] {2,3,4,2,1,3};
-    //  printDuplicates(arr);
-      reverse();
+     printDuplicates(arr);
+     // reverse();
     }
 
     static  void printDuplicates(int[] a) {

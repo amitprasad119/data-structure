@@ -7,11 +7,12 @@ import java.util.HashSet;
 public class Combination {
     public static void main(String[] args) {
         int[] arr = new int[] {1,2,3,5,8,9,4,6};
-        int[] arr2 = new int[] {1,2,3,4};
+        int[] arr2 = new int[] {1,2,3};
 
         Combination p = new Combination();
-        p.targetCombination(arr,new HashSet<>(),6 ,0);
-        p.combinations(arr2,new ArrayList<Integer> (),2,0);
+       // p.targetCombination(arr,new HashSet<>(),6 ,0);
+       // p.combinations(arr2,new ArrayList<Integer> (),2,0);
+        p.combinations2(arr2,new ArrayList<>(),0,new boolean[arr2.length]);
     }
 
     void combinations(int [] arr,ArrayList<Integer> partial,int k,int start) {
@@ -42,5 +43,21 @@ public class Combination {
                combinations.remove(arr[i]);
                targetCombination(arr, combinations, target,i+1);
 
+    }
+
+    void combinations2(int[] arr,ArrayList<Integer> partial,int start,boolean[] used) {
+        if(start == arr.length)
+            return;
+
+      for(int i = start;i<arr.length;i++) {
+          if (!used[i]) {
+              used[i] = true;
+              partial.add(arr[i]);
+              combinations2(arr, partial, start + 1,used);
+              System.out.println(partial);
+              used[i] = false;
+              partial.remove(partial.size() - 1);
+          }
+      }
     }
 }

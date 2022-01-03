@@ -36,9 +36,7 @@ public class BinaryTree {
         System.out.println("Total value:"+totalCount(root));
 
     }
-    /**
-     *  BFS
-     */
+
      public static  int totalCount(Node<Integer> root) {
        if(root == null) {
            return 0;
@@ -46,6 +44,9 @@ public class BinaryTree {
 
        return  root.getData() + totalCount(root.getLeftNode()) + totalCount(root.getRightNode());
      }
+    /**
+     *  BFS
+     */
     public static <T> void bfs(Node<T> root) {
         Queue<Node<T>> queue = new LinkedList();
         if(root == null) {

@@ -41,7 +41,6 @@ public class StackMain {
                   return false;
           }
       }
-      java.util.Arrays.asList();
       return sobj.top == -1;
     }
 }

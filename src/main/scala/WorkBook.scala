@@ -1,16 +1,12 @@
-
-
 object WorkBook extends App {
+  val wb = new WorkBook("Amit", "Prasad")
+  println(wb.firstName)
+  wb.firstName = "sumit"
+  println(wb.getFullName)
 
-  val mappedName = Map("Amrita" -> "1","John" ->2,"Sagar" -> "9")
-   def greet(name: String) {
-     mappedName.get(name) match {
-       case Some(_) => println("Hello " +name)
-       case _ => println("Hello, Who are you ?")
-     }
-   }
+}
 
-  println(greet("Amrita"))
+class WorkBook(var firstName: String, val lastName: String) {
 
-  List("Amit","Sumit","Amrita").map(greet)
+  def getFullName = firstName + lastName
 }

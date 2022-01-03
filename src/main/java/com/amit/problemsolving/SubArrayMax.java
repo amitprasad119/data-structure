@@ -2,7 +2,7 @@ package com.amit.problemsolving;
 
 public class SubArrayMax {
     public static void main(String[] args) {
-      int a[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+      int a[] = {5,6,-8,2,-3,5};
       int b[] = {1,2,3};
         System.out.println(maxSubArray(a));
         System.out.println(maxSubArrayOptimal(a));
@@ -47,11 +47,9 @@ public class SubArrayMax {
     public static  int sumOfAllSubArray(int[] a ) {
         int sum = 0;
         int tempSum = 0;
-       // System.out.println("I , J , A[j] , temp , sum " );
         for(int i =0;i<a.length;i++) {
             tempSum = 0;
             for(int j =i;j<a.length;j++) {
-               // System.out.println( i  + ", " + j + " , " + a[j] + " , " + tempSum + " , "+ sum);
                 tempSum+=a[j];
                 System.out.println("A[j], temp "+ a[j] +" , " + tempSum);
 
